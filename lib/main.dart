@@ -1,5 +1,4 @@
-import 'package:chatapp/screen/login.dart';
-// import 'package:chatapp/screen/signup.dart';
+import 'package:chatapp/screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 late Size mq;
@@ -14,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: login_screeen(),
+      home: splash_screen(),
     );
   }
 }

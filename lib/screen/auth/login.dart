@@ -1,31 +1,43 @@
 import 'package:chatapp/main.dart';
 import 'package:flutter/material.dart';
 
-class login_screeen extends StatefulWidget {
-  const login_screeen({super.key});
+class login_screen extends StatefulWidget {
+  const login_screen({super.key});
 
   @override
-  State<login_screeen> createState() => _login_screeenState();
+  State<login_screen> createState() => _login_screenState();
 }
 
-class _login_screeenState extends State<login_screeen> {
+class _login_screenState extends State<login_screen> {
+  bool _isAnimated = false;
   @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration(milliseconds: 500), () {
+      setState(() {
+        _isAnimated = true;
+      });
+    });
+  }
+
   Widget build(BuildContext context) {
     mq = MediaQuery.of(context).size;
     return Scaffold(
       body: Scaffold(
         body: Stack(
           children: [
-            Positioned(
+            AnimatedPositioned(
+              duration: Duration(seconds: 1),
               top: mq.height * .15,
               width: mq.width * .5,
-              left: mq.width * .25,
+              right: _isAnimated ? mq.width * .25 : -mq.width * .5,
               child: Image.asset('images/chat.png'),
             ),
-            Positioned(
-              bottom: mq.height * .15,
+            AnimatedPositioned(
+              duration: Duration(seconds: 2),
+              bottom: _isAnimated ? mq.height * .15 : -mq.height * .5,
               width: mq.width * .9,
-              left: mq.width * .05,
+              right: mq.width * .05,
               height: mq.height * .07,
               child: ElevatedButton.icon(
                 style: ElevatedButton.styleFrom(

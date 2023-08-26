@@ -1,4 +1,4 @@
-import 'package:chatapp/screen/usercard.dart';
+import 'package:chatapp/screen/widget/usercard.dart';
 import 'package:flutter/material.dart';
 
 class mainpage extends StatefulWidget {

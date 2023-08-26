@@ -10,7 +10,6 @@ class splash_screen extends StatefulWidget {
 }
 
 class _splash_screenState extends State<splash_screen> {
-  bool _isAnimated = false;
   @override
   void initState() {
     super.initState();
